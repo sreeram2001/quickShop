@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Classic Straight Jeans",
+    "price": 29.99,
+    "material": "65% polyester, 35% cotton",
+    "seller": "StyleMarket",
+    "seller_reputation": "Unknown retailer with limited information",
+    "rating": 4.9,
+    "review_count": 15
+  },
+  {
+    "name": "Everyday Cotton Straight Jeans",
+    "price": 68.00,
+    "material": "99% cotton, 1% elastane",
+    "seller": "Established Clothing Co.",
+    "seller_reputation": "Established retailer with a long sales history",
+    "rating": 4.5,
+    "review_count": 2300
+  },
+  {
+    "name": "Essential Straight Jeans",
+    "price": 52.00,
+    "material": "70% cotton, 30% polyester",
+    "seller": "Trusted Apparel",
+    "seller_reputation": "Established retailer",
+    "rating": 4.3,
+    "review_count": 800
+  },
+  {
+    "name": "Premium Cotton Jeans",
+    "price": 95.00,
+    "material": "100% cotton",
+    "seller": "Established Denim Co.",
+    "seller_reputation": "Established retailer",
+    "rating": 4.7,
+    "review_count": 1500
+  },
+  {
+    "name": "Ultra Cheap Straight Jeans",
+    "price": 19.99,
+    "material": "Material not provided",
+    "seller": "FashionDeals247",
+    "seller_reputation": "New retailer with little available information",
+    "rating": 5.0,
+    "review_count": 7
+  }
+]

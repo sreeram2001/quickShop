@@ -1,0 +1,84 @@
+{
+  "shopping_results": [
+    {
+      "title": "Levi's 501 Original Straight-Leg Jeans - Black",
+      "extracted_price": 69.99,
+      "source": "Levi's",
+      "rating": 4.6,
+      "reviews": 5200,
+      "link": "https://example.com/levis-501-black"
+    },
+    {
+      "title": "Everlane Organic Cotton Straight Jeans",
+      "extracted_price": 78.00,
+      "source": "Everlane",
+      "rating": 4.4,
+      "reviews": 1800,
+      "link": "https://example.com/everlane-organic"
+    },
+    {
+      "title": "Uniqlo Regular Fit Straight Jeans",
+      "extracted_price": 49.90,
+      "source": "Uniqlo",
+      "rating": 4.3,
+      "reviews": 3400,
+      "link": "https://example.com/uniqlo-straight"
+    },
+    {
+      "title": "Classic Straight-Leg Denim - Black",
+      "extracted_price": 24.99,
+      "source": "StyleMarket247",
+      "rating": 4.9,
+      "reviews": 12,
+      "link": "https://example.com/stylemarket-classic"
+    },
+    {
+      "title": "Premium Selvedge Straight Jeans",
+      "extracted_price": 139.00,
+      "source": "Todd Snyder",
+      "rating": 4.8,
+      "reviews": 640,
+      "link": "https://example.com/selvedge-premium"
+    },
+    {
+      "title": "Budget Straight Jeans - Unbranded",
+      "extracted_price": 15.99,
+      "source": "DealFashionHub",
+      "rating": 5.0,
+      "reviews": 4,
+      "link": "https://example.com/budget-unbranded"
+    },
+    {
+      "title": "Gap Standard Straight Jeans - Black",
+      "extracted_price": 59.95,
+      "source": "Gap",
+      "rating": 4.2,
+      "reviews": 2100,
+      "link": "https://example.com/gap-standard"
+    },
+    {
+      "title": "Madewell Perfect Vintage Straight Jean",
+      "extracted_price": 98.00,
+      "source": "Madewell",
+      "rating": 4.5,
+      "reviews": 980,
+      "link": "https://example.com/madewell-vintage"
+    },
+    {
+      "title": "H&M Straight Regular Jeans",
+      "extracted_price": 34.99,
+      "source": "H&M",
+      "rating": 4.0,
+      "reviews": 760,
+      "link": "https://example.com/hm-straight"
+    },
+    {
+      "title": "No-Name Straight Jeans Clearance",
+      "extracted_price": 12.50,
+      "source": "ClearanceOutletXYZ",
+      "rating": 4.7,
+      "reviews": 6,
+      "link": "https://example.com/noname-clearance"
+    }
+  ]
+}
