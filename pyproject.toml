@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "quickshop"
+version = "0.1.0"
+description = "Agentic AI shopping assistant for clothing"
+requires-python = ">=3.10"
+dependencies = [
+    "strands-harness[openai]==0.3.2",
+    "python-dotenv",
+    "pydantic",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.setuptools.packages.find]
+include = ["quickshop*"]
