@@ -1,8 +1,14 @@
 # Secrets
 .env
 
+# Harness sessions
+.sessions/
+.agent/
+
 # Python
 __pycache__/
+*.egg-info/
+.pytest_cache/
 *.py[cod]
 venv/
 .venv/
