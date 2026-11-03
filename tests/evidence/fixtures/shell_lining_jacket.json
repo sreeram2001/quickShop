@@ -1,0 +1,22 @@
+{
+  "markdown": "# Field Jacket - Olive\nPrice: $129.00 | Only 3 left\n\n### Materials\nShell: 100% Cotton\nLining: 100% Polyester\nTrim: 100% Leather\n\nImported. Country of origin: Portugal\nReturns accepted within 14 days; buyer pays return shipping.\n",
+  "json": {
+    "is_product_page": true,
+    "title": "Field Jacket - Olive",
+    "brand": "Example Outfitters",
+    "price_amount": 129.0,
+    "price_currency": "USD",
+    "price_text": "$129.00",
+    "composition_text": "Shell: 100% Cotton\nLining: 100% Polyester\nTrim: 100% Leather",
+    "origin_text": "Country of origin: Portugal",
+    "return_policy_text": "Returns accepted within 14 days; buyer pays return shipping.",
+    "rating": null,
+    "review_count": null,
+    "in_stock": true,
+    "availability_text": "Only 3 left"
+  },
+  "metadata": {
+    "status_code": 200,
+    "credits_used": 5
+  }
+}

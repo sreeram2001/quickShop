@@ -74,3 +74,51 @@ of guessing.
 
 - **SerpAPI** : Google Shopping endpoint for discovery.
 - **Firecrawl** : schema-constrained JSON extracted from a product page for evidence.
+
+## Product evidence (`fetch_product_evidence`)
+
+Given a product URL, `quickshop/evidence/` returns one validated `EvidenceRecord`. It does no search,
+no merchant checks and no 1 to 5 scoring: it only reads a page and reports what it found.
+
+```
+URL -> canonicalize -> cache (per-field TTL) -> Firecrawl (JSON extraction + markdown)
+    -> deterministic fabric parser -> EvidenceRecord -> cache -> dict
+```
+
+| File | Job |
+|------|-----|
+| `schema.py` | `EvidenceRecord` and its parts. Unknown is `None`, never 0. Percentages 0 to 100, currency is a code. |
+| `firecrawl_client.py` | The only file that talks to Firecrawl. Never raises; failures become `status="unavailable"` with a reason. Exposes a calls/credits counter. |
+| `fabric.py` + `fiber_config.py` | Pure-Python composition parser. Fiber names, categories and part labels live in `fiber_config.py` as data. |
+| `cache.py` | SQLite cache keyed by canonical URL. `canonicalize_url()` lives here. |
+| `service.py` | The pipeline (`EvidenceService`). `build_record()` is pure and testable. |
+| `tool.py` | The Strands `@tool` the agent sees. Always returns a dict that validates against the schema. |
+
+**The model extracts, Python parses.** Firecrawl copies the composition text verbatim. Python turns it
+into fibers and percentages and computes `natural_fiber_pct` for the **main fabric only** (shell/body,
+or the only part given). Lining, trim and filling are kept but never counted. If the extracted text
+is not on the page, it is discarded rather than trusted.
+
+**Status:** `ok` means composition was read unambiguously and a price was found. `partial` means
+something is missing or ambiguous (see `error_reason` and `parse_notes`). `unavailable` means the page
+could not be read. `composition_confidence` is `explicit`, `ambiguous` (e.g. percentages do not total
+100, "approx.", ranges, several unlabeled fabrics; never rescaled) or `missing`.
+
+**Config flags**
+
+| Flag | Where | Default |
+|------|-------|---------|
+| `COUNT_REGENERATED_AS_NATURAL` (viscose/rayon, modal, lyocell, cupro...) | `fiber_config.py` | `False`. Always reported separately as `regenerated_fiber_pct`. |
+| `SUM_TOLERANCE` for "totals about 100" | `fiber_config.py` | `1.0` |
+| `FIELD_GROUPS`, `TTLS`, `NEGATIVE_TTL` | `cache.py` | composition/origin/brand 30 days, reviews 7 days, price/stock 6 hours, failures 15 minutes |
+| `FIRECRAWL_API_KEY` | `.env` | empty. Without it the tool returns `unavailable`, it does not crash. |
+| `QUICKSHOP_EVIDENCE_CACHE` | `.env` | `.cache/evidence.sqlite3` |
+| `QUICKSHOP_EVIDENCE_REPLAY=1` | `.env` | off. Serve only from the cache, never call Firecrawl (reproducible evaluation). |
+
+**Cost.** A fresh page read is about 5 Firecrawl credits (1 + 4 for JSON extraction). Cached reads are
+free. For the budget hook, `quickshop.evidence.tool.get_usage()` returns Firecrawl calls and credits
+plus cache hits and misses. The cache can be frozen with `EvidenceCache.export_json()`.
+
+**Tests:** `pytest` runs everything offline from saved page fixtures in `tests/evidence/fixtures/`.
+The one live test is skipped unless you run
+`FIRECRAWL_API_KEY=... QUICKSHOP_LIVE_URL=<product url> pytest --run-live`.

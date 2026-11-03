@@ -1,0 +1,15 @@
+{
+  "markdown": "# Mystery Hoodie\n$40.00\nCozy hoodie for cold days.\n",
+  "json": {
+    "is_product_page": true,
+    "title": "Mystery Hoodie",
+    "price_amount": 40.0,
+    "price_currency": "USD",
+    "price_text": "$40.00",
+    "composition_text": "100% Cotton"
+  },
+  "metadata": {
+    "status_code": 200,
+    "credits_used": 5
+  }
+}

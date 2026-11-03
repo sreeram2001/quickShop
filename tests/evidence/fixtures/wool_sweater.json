@@ -1,0 +1,21 @@
+{
+  "markdown": "# Merino Crewneck Sweater\n€89.90\n\n| Material | 80% Lambswool, 20% Polyamide |\n| Made in | Italy |\n\n30-day return window.\n",
+  "json": {
+    "is_product_page": true,
+    "title": "Merino Crewneck Sweater",
+    "brand": "Example Knitwear",
+    "price_amount": 89.9,
+    "price_currency": "EUR",
+    "price_text": "€89.90",
+    "composition_text": "80% Lambswool, 20% Polyamide",
+    "origin_text": "Italy",
+    "return_policy_text": "30-day return window.",
+    "rating": 4.8,
+    "review_count": 56,
+    "in_stock": null
+  },
+  "metadata": {
+    "status_code": 200,
+    "credits_used": 5
+  }
+}

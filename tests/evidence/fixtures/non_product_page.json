@@ -1,0 +1,11 @@
+{
+  "markdown": "# Spring Collection\nBrowse our new arrivals.\n",
+  "json": {
+    "is_product_page": false,
+    "title": "Spring Collection"
+  },
+  "metadata": {
+    "status_code": 200,
+    "credits_used": 5
+  }
+}

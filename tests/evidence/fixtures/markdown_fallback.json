@@ -1,0 +1,15 @@
+{
+  "markdown": "# Linen Blend Shirt\n$58.00\n\n## Fabric & care\nMaterial: 55% Linen, 45% Cotton\nMachine wash warm.\n",
+  "json": {
+    "is_product_page": true,
+    "title": "Linen Blend Shirt",
+    "price_amount": 58.0,
+    "price_currency": "USD",
+    "price_text": "$58.00",
+    "composition_text": null
+  },
+  "metadata": {
+    "status_code": 200,
+    "credits_used": 5
+  }
+}
