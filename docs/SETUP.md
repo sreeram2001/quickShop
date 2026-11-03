@@ -39,7 +39,7 @@ Write it as `NAME=value` with no quotes and no spaces. Never commit `.env`. It i
 |------|------------|------------------|
 | API_KEY | ASU gateway key from the Voyager portal | Now |
 | FIRECRAWL_API_KEY | Firecrawl key, for reading product pages | When you want real page reads. Empty is fine for tests. |
-| QUICKSHOP_EVIDENCE_CACHE | Where saved page evidence is stored | Optional |
+| QUICKSHOP_EVIDENCE_CACHE | Where saved page evidence is stored (SQLite file, default `.cache/evidence.sqlite3`) | Optional |
 | QUICKSHOP_EVIDENCE_REPLAY | Set to 1 to use only saved evidence, no Firecrawl calls | Optional |
 
 When you add a new key (for example for SerpAPI or Firecrawl), read it in your code with `os.getenv("NAME")`, add an empty `NAME=` line to `.env.example`, and tell the team to add their own value.
