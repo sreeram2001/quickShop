@@ -38,6 +38,9 @@ Write it as `NAME=value` with no quotes and no spaces. Never commit `.env`. It i
 | Name | What it is | When you need it |
 |------|------------|------------------|
 | API_KEY | ASU gateway key from the Voyager portal | Now |
+| FIRECRAWL_API_KEY | Firecrawl key, for reading product pages | When you want real page reads. Empty is fine for tests. |
+| QUICKSHOP_EVIDENCE_CACHE | Where saved page evidence is stored | Optional |
+| QUICKSHOP_EVIDENCE_REPLAY | Set to 1 to use only saved evidence, no Firecrawl calls | Optional |
 
 When you add a new key (for example for SerpAPI or Firecrawl), read it in your code with `os.getenv("NAME")`, add an empty `NAME=` line to `.env.example`, and tell the team to add their own value.
 
@@ -63,11 +66,13 @@ quickshop/
     interventions.py limit on expensive page reads
     hooks.py         writes down every tool call
   tools/
-    stubs.py         fake versions of four tools
+    stubs.py         fake versions of three tools (search, merchant, score)
     user.py          ask_user, asks the shopper a question
     __init__.py      the list of tools the agent gets
+  evidence/          reads a product page: schema, Firecrawl client, fabric parser, cache, tool
   fixtures/          fake data used by the stubs
 tests/               tests that run without the internet
+  evidence/          tests and saved page fixtures for quickshop/evidence/
 ```
 
 ## Adding a real tool

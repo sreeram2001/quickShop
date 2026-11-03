@@ -1,0 +1,25 @@
+{
+  "markdown": "# Everyday Crew Tee - Navy\n**$24.00**  In stock\n\n## Details\n- Relaxed fit, crew neck\n- Composition: 60% Cotton, 40% Polyester\n- Made in Vietnam\n\n## Care\nMachine wash cold. Tumble dry low. Do not bleach.\n\n## Returns\nFree returns within 30 days of delivery on unworn items.\n\n4.4 out of 5 stars (210 reviews)\n",
+  "json": {
+    "is_product_page": true,
+    "title": "Everyday Crew Tee - Navy",
+    "brand": "Example Outfitters",
+    "seller_name": "Example Outfitters",
+    "price_amount": 24.0,
+    "price_currency": "USD",
+    "price_text": "$24.00",
+    "composition_text": "60% Cotton, 40% Polyester",
+    "care_text": "Machine wash cold. Tumble dry low. Do not bleach.",
+    "origin_text": "Made in Vietnam",
+    "return_policy_text": "Free returns within 30 days of delivery on unworn items.",
+    "rating": 4.4,
+    "review_count": 210,
+    "rating_text": "4.4 out of 5 stars (210 reviews)",
+    "in_stock": true,
+    "availability_text": "In stock"
+  },
+  "metadata": {
+    "status_code": 200,
+    "credits_used": 5
+  }
+}
