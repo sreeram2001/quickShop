@@ -1,0 +1,21 @@
+{
+  "markdown": "# Classic Straight Jeans - Black\n$29.99\n\nGreat fit, great price! Free shipping on all orders.\nFabric: Premium denim. 4.9 stars (15 reviews)\n",
+  "json": {
+    "is_product_page": true,
+    "title": "Classic Straight Jeans - Black",
+    "brand": null,
+    "price_amount": 29.99,
+    "price_currency": "USD",
+    "price_text": "$29.99",
+    "composition_text": null,
+    "origin_text": null,
+    "return_policy_text": null,
+    "rating": 4.9,
+    "review_count": 15,
+    "in_stock": true
+  },
+  "metadata": {
+    "status_code": 200,
+    "credits_used": 5
+  }
+}

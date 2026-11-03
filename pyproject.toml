@@ -11,10 +11,15 @@ dependencies = [
     "strands-harness[openai]==0.3.2",
     "python-dotenv",
     "pydantic",
+    "firecrawl-py==4.54.0",
 ]
 
 [project.optional-dependencies]
 dev = ["pytest"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["live: calls the real Firecrawl API and spends credits (run with --run-live)"]
 
 [tool.setuptools.packages.find]
 include = ["quickshop*"]

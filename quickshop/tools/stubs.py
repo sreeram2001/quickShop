@@ -1,9 +1,9 @@
-# Fake versions of four tools. Teammates replace these with the real ones.
+# Fake versions of three tools (fetch_product_evidence is real: see quickshop/evidence/). Teammates replace these with the real ones.
 # Keep the tool names, the arguments and the return shapes the same.
 from strands import tool
 
-from quickshop.fixtures.mock_data import EVIDENCE, LISTINGS, MERCHANTS, SCORES
-from quickshop.schemas import Evidence, Listing, MerchantSignals, Scores
+from quickshop.fixtures.mock_data import LISTINGS, MERCHANTS, SCORES
+from quickshop.schemas import Listing, MerchantSignals, Scores
 
 @tool
 def search_listings(query: str) -> list:
@@ -16,21 +16,6 @@ def search_listings(query: str) -> list:
         A list of listings with title, price, merchant, domain, rating, reviews and url.
     """
     return [Listing(**item).model_dump() for item in LISTINGS]
-
-@tool
-def fetch_product_evidence(url: str) -> dict:
-    """Read a product page for fabric, origin and seller details.
-    This is expensive, each call uses one page-reading credit.
-
-    Args:
-        url: The product page url from a listing.
-
-    Returns:
-        The evidence record. available is false if the page could not be read.
-    """
-    if url not in EVIDENCE:
-        return Evidence(url=url, available=False).model_dump()
-    return Evidence(url=url, **EVIDENCE[url]).model_dump()
 
 @tool
 def check_merchant(merchant: str) -> dict:
